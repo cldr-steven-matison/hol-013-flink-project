@@ -1,0 +1,8 @@
+{
+  "name" : "HAVETOKM",
+  "language" : "PYTHON",
+  "output_type" : "PYTHON_INFERRED",
+  "input_types" : [ ],
+  "code" : "from pyflink.table.udf import udf\nfrom pyflink.table import DataTypes\nimport math\n\n@udf(result_type=DataTypes.FLOAT())\ndef udf_function(lat1,lon1,lat2,lon2):\n    def toRad(x):\n        return float(x) * math.pi / 180\n\n    R = 6371 # km\n    x1 = lat2 - lat1\n    dLat = toRad(x1)\n    x2 = lon2 - lon1\n    dLon = toRad(x2)\n    a = (math.sin(dLat / 2) * math.sin(dLat / 2) +\n      math.cos(toRad(lat1)) * math.cos(toRad(lat2)) *\n      math.sin(dLon / 2) * math.sin(dLon / 2))\n    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))\n    d = R * c\n\n    return d",
+  "java_class_name" : "HAVETOKM.udf_function"
+}
