@@ -5,7 +5,7 @@
   "properties" : {
     "table_filters" : [],
     "catalog_type" : "kudu",
-    "kudu.masters" : "csp-hol-kudu-master10.go01-dem.ylcu-atmi.cloudera.site:7051,csp-hol-kudu-master20.go01-dem.ylcu-atmi.cloudera.site:7051,csp-hol-kudu-master30.go01-dem.ylcu-atmi.cloudera.site:7051"
+    "masters" : "csp-hol-kudu-master10.go01-dem.ylcu-atmi.cloudera.site:7051,csp-hol-kudu-master20.go01-dem.ylcu-atmi.cloudera.site:7051,csp-hol-kudu-master30.go01-dem.ylcu-atmi.cloudera.site:7051"
   },
   "custom_truststore" : false
 }
